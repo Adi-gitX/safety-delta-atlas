@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+results/raw_generations/*.jsonl
+results/judged/*.jsonl
+.DS_Store

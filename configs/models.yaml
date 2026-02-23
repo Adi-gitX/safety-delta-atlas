@@ -1,0 +1,14 @@
+pairs:
+  - pair_id: pair_a_qwen25_3b
+    family: qwen2.5
+    base_model: Qwen/Qwen2.5-3B
+    instruct_model: Qwen/Qwen2.5-3B-Instruct
+  - pair_id: pair_b_smollm2_1p7b
+    family: smollm2
+    base_model: HuggingFaceTB/SmolLM2-1.7B
+    instruct_model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+runtime:
+  dtype: float16
+  device_map: auto
+  load_in_4bit: true
+  trust_remote_code: false

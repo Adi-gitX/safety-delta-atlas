@@ -1,0 +1,22 @@
+seeds: [11, 22, 33]
+temperatures: [0.2, 0.8]
+max_new_tokens: 256
+top_diffs_target: 3
+top_diffs_fallback: 2
+pair_a_families: [refusal_style, honesty_uncertainty, sycophancy_or_policy_compliance]
+pair_b_families: [sycophancy_or_policy_compliance]
+pair_b_required_family: sycophancy_or_policy_compliance
+judge:
+  provider: gemini
+  model: gemini-2.5-pro
+  max_retries: 3
+  timeout_seconds: 40
+  sleep_seconds: 0.0
+paths:
+  prompt_dir: data/prompts
+  raw_dir: results/raw_generations
+  judged_dir: results/judged
+  scored_dir: results/scored
+  kl_dir: results/kl
+  figures_dir: results/figures
+  diff_cards_dir: results/diff_cards
