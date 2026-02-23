@@ -10,23 +10,28 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
-## 2) Set Gemini key
+## 2) Authenticate Hugging Face (required for Gemma)
+```bash
+hf auth login
+```
+
+## 3) Set Gemini key
 ```python
 import os
 os.environ["GEMINI_API_KEY"] = "<YOUR_KEY>"
 ```
 
-## 3) Run the project
+## 4) Run the project
 ```bash
 bash scripts/run_all.sh --mode full
 ```
 
-## 4) Build PDFs
+## 5) Build PDFs
 ```bash
 bash scripts/make_pdfs.sh
 ```
 
-## 5) Push results
+## 6) Push results
 ```bash
 git add .
 git commit -m "Safety Delta Atlas: outputs + writeup"

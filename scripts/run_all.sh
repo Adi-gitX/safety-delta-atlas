@@ -17,7 +17,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$MODE" ]]; then
-  echo "Usage: bash scripts/run_all.sh --mode {prompts|generate|judge|score|kl|layer|cards|validate|full|smoke}"
+  echo "Usage: bash scripts/run_all.sh --mode {preflight|prompts|generate|judge|score|kl|layer|cards|validate|full|smoke}"
   exit 1
 fi
 
@@ -46,6 +46,10 @@ mkdir -p "$RAW_DIR" "$JUDGED_DIR" "$SCORED_DIR" "$FIG_DIR" "$CARDS_DIR" "$ROOT_D
 
 run_prompts() {
   "$PYTHON_BIN" "$ROOT_DIR/scripts/00_make_prompt_datasets.py"
+}
+
+run_preflight() {
+  "$PYTHON_BIN" "$ROOT_DIR/scripts/preflight_checks.py"
 }
 
 run_generate() {
@@ -136,6 +140,9 @@ run_validate() {
 }
 
 case "$MODE" in
+  preflight)
+    run_preflight
+    ;;
   prompts)
     run_prompts
     ;;
